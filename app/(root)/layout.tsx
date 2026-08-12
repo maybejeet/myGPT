@@ -9,7 +9,7 @@ const RootGroupLayout = async ({children}: {children : React.ReactNode}) => {
 
   return (
     <div>
-        RootGroupLayout
+        {children}
     </div>
   )
 }
