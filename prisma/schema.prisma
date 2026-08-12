@@ -11,10 +11,24 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  // url      = env("DATABASE_URL")
 }
+
+//Test Schema
 model Test{
   id String@id
   title String
   desc String
+}
+
+model User{
+  id String @id @default(uuid())
+  clearId String @unique
+  email String? @unique
+  firstName String?
+  lastName String?
+  imageUrl String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
 }
