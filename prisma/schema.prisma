@@ -16,7 +16,7 @@ datasource db {
 
 model User {
   id          String @id @default(uuid())
-  clearId     String @unique
+  clerkId     String @unique
   email       String? @unique
   firstName   String?
   lastName    String?
@@ -65,7 +65,7 @@ model Message {
   role              MessageRole
   status            MessageStatus @default(COMPLETE)
   content           String @db.Text
-  parts             Json
+  parts             Json?
   metadata          Json?
   //parentId  TODO:ASSIGNMENT -> Implement branching
   createdAt         DateTime @default(now())
